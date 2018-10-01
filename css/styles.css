@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+}
+
+#navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+}
+
+#logo-c{
+    display: flex;
+    margin: auto 15px;
+    width: 150px;
+    height: 60px;
+}
+
+#logo{
+    display: block;
+    width: 150px;
+}
+
+#navbtn-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    text-align: center;
+}
+
+.navbtn{
+    width: 130px;
+    border-left: 2px #202c3c solid;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbtn p{
+    margin: auto;
+    height: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #202c3c;
+}
