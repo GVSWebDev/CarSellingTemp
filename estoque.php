@@ -33,7 +33,7 @@ require "header.html";
                 </div>
                 <div class="info-text-c">
                     <div class="info-top-c">
-                        <p>Peugeot 208 1.2 Allure 12V FLEX</p>
+                        <h2>Peugeot 208 1.2 Allure 12V FLEX</h2>
                         <hr>
                     </div>
                     <div class="info-bottom-c">
