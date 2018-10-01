@@ -6,20 +6,22 @@ require "header.html";
     <div id="wrapper">
         <div id="filter-c">
             <p>Filtrar por:</p>
+            <form class="form">
             <div class="filter-section-c">
                 <hr>
                 <p class="filter-p">Marca:</p>
-                <form class="form">
+                
                     <input type="checkbox" class="checkbox" name="peugeot">Peugeot
-                </form>
+                
             </div>
             <div class="filter-section-c">
                 <hr>
                 <p class="filter-p">Cambio:</p>
-                <form class="form">
+                
                     <input type="checkbox" class="checkbox" name="peugeot">Automatico
-                </form>
+                
             </div>
+            </form>
         </div>
         <div id="results-c">
 

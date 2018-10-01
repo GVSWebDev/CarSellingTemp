@@ -76,7 +76,10 @@ p{
     display: flex;
     flex-direction: column;
     flex-basis: 80%;
-    background-color: white;
     margin-left: 20px;
     min-height: 800px;
+}
+
+.checkbox{
+
 }
