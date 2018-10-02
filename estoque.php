@@ -8,7 +8,59 @@ require "dbconnect.php";
         <div id="filter-c">
             <p>Filtrar por:</p>
             <form class="form">
-            <div class="filter-section-c">
+            <?php
+                $sql = $con->prepare("SELECT DISTINCT marca FROM pdb.carros");
+                $sql->execute();
+                $result = $sql->get_result();
+                if($result->num_rows === 0) exit ("0 matches");
+                echo '<div class="filter-section-c">
+                <hr>
+                <p class="filter-p">Fabricante:</p>';
+                while($row = $result->fetch_assoc()){
+                    echo '<input type="checkbox" class="checkbox" name="'.$row["marca"].'">'.$row["marca"].'<br>';
+                } echo '</div>';
+
+                $sql = $con->prepare("SELECT DISTINCT ano FROM pdb.carros");
+                $sql->execute();
+                $result = $sql->get_result();
+                echo '<div class="filter-section-c">
+                <hr>
+                <p class="filter-p">Ano:</p>';
+                while($row = $result->fetch_assoc()){
+                    echo '<input type="checkbox" class="checkbox" name="'.$row["ano"].'">'.$row["ano"].'<br>';
+                } echo '</div>';
+
+                $sql = $con->prepare("SELECT DISTINCT cor FROM pdb.carros");
+                $sql->execute();
+                $result = $sql->get_result();
+                echo '<div class="filter-section-c">
+                <hr>
+                <p class="filter-p">Cor:</p>';
+                while($row = $result->fetch_assoc()){
+                    echo '<input type="checkbox" class="checkbox" name="'.$row["cor"].'">'.$row["cor"].'<br>';
+                } echo '</div>';
+
+                $sql = $con->prepare("SELECT DISTINCT cambio FROM pdb.carros");
+                $sql->execute();
+                $result = $sql->get_result();
+                echo '<div class="filter-section-c">
+                <hr>
+                <p class="filter-p">Cambio:</p>';
+                while($row = $result->fetch_assoc()){
+                    echo '<input type="checkbox" class="checkbox" name="'.$row["cambio"].'">'.$row["cambio"].'<br>';
+                } echo '</div>';
+
+                $sql = $con->prepare("SELECT DISTINCT combustivel FROM pdb.carros");
+                $sql->execute();
+                $result = $sql->get_result();
+                echo '<div class="filter-section-c">
+                <hr>
+                <p class="filter-p">Combustível:</p>';
+                while($row = $result->fetch_assoc()){
+                    echo '<input type="checkbox" class="checkbox" name="'.$row["combustivel"].'">'.$row["combustivel"].'<br>';
+                } echo '</div>';
+            ?>
+            <!-- <div class="filter-section-c">
                 <hr>
                 <p class="filter-p">Marca:</p>
                 
@@ -21,7 +73,8 @@ require "dbconnect.php";
                 
                     <input type="checkbox" class="checkbox" name="peugeot">Automatico
                 
-            </div>
+            </div> -->
+            <input type="submit" value="Submit">
             </form>
         </div>
         <div id="results-c">
@@ -32,7 +85,7 @@ require "dbconnect.php";
 
                 if($result->num_rows === 0) exit ("0 matches");
                 while($row = $result->fetch_assoc()){
-                    $sqlimg = $con->prepare("SELECT * FROM pdb.carros_img WHERE carroid = ".$row["carroid"]);
+                    $sqlimg = $con->prepare("SELECT * FROM pdb.carros_img WHERE isprincipal = 1 AND carroid = ".$row["carroid"]);
                     $sqlimg->execute();
                     $resultimg = $sqlimg->get_result();
                     $rowimg = $resultimg->fetch_assoc();
@@ -41,11 +94,12 @@ require "dbconnect.php";
                     $sqlopc = $con->prepare("SELECT * FROM pdb.carros_opc WHERE carroid = ".$row["carroid"]);
                     $sqlopc->execute();
                     $resultopc = $sqlopc->get_result();
-                    
+                    $semopcionais = false;
+
                     $opccounter = 0;
 
                     $nomet = trim($row["nome"]);
-                    $link = "'estoque.php?id=".$row["carroid"]."&?c=".preg_replace('/\s+/', '-', $nomet)."'";
+                    $link = "'estoque.php?id=".$row["carroid"]."&c=".preg_replace('/\s+/', '-', $nomet)."'";
                     
                     echo '<div class="stock-item-c">
                     <div class="side-shadow">
@@ -67,17 +121,19 @@ require "dbconnect.php";
                             <li class="carinfo-li">'.$row["portas"].' Portas</li>
                         </ul>
                         <ul class="extras-c">';
-                            
+                            if($resultopc->num_rows == 0) {echo "Sem opcionais :("; $semopcionais = true;}
+                            else {
                             while($rowopc = $resultopc->fetch_assoc()){
                             if ($opccounter < 3){
                             echo '<li class="extras-li">'.$rowopc["opcional"].'</li>';
                             $opccounter++;
-                        } else {
+                            } else {
                             $rowopccount = mysqli_num_rows($resultopc) - $opccounter;
-                        }      
-                    }
-                    echo '<a class="extras-anchor">+'.$rowopccount.' opcionais</a>
-                        </ul>
+                            }  
+                        }    
+                    } if ($semopcionais != true){
+                    echo '<a class="extras-anchor">+'.$rowopccount.' opcionais</a>';}
+                    echo '</ul>
                     </div>
                 </div>
                 <div class="side-separator">
