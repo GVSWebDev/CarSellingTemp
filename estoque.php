@@ -6,6 +6,7 @@ require "dbconnect.php";
 <body>
     <div id="wrapper">
         <div id="filter-c">
+            <div id="filter-wrapper">
             <p>Filtrar por:</p>
             <form class="form">
             <?php
@@ -76,6 +77,7 @@ require "dbconnect.php";
             </div> -->
             <input type="submit" value="Submit">
             </form>
+            </div>
         </div>
         <div id="results-c">
             <?php
@@ -115,10 +117,10 @@ require "dbconnect.php";
                     </div>
                     <div class="info-bottom-c">
                         <ul class="carinfo-c">
-                            <li class="carinfo-li">'.$row["kilometragem"].'km</li>
-                            <li class="carinfo-li">Cambio '.$row["cambio"].'</li>
-                            <li class="carinfo-li">'.$row["ano"].'</li>
-                            <li class="carinfo-li">'.$row["portas"].' Portas</li>
+                            <li class="carinfo-li carinfo-km">'.$row["kilometragem"].'km</li>
+                            <li class="carinfo-li carinfo-cam">Cambio '.$row["cambio"].'</li>
+                            <li class="carinfo-li carinfo-ano">'.$row["ano"].'</li>
+                            <li class="carinfo-li carinfo-por">'.$row["portas"].' Portas</li>
                         </ul>
                         <ul class="extras-c">';
                             if($resultopc->num_rows == 0) {echo "Sem opcionais :("; $semopcionais = true;}

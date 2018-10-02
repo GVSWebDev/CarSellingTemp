@@ -60,18 +60,22 @@ p{
     width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     margin: 25px auto auto auto;
 }
 
 #filter-c{
-    background-color: white;
-    width: 100px;
+    background-color: transparent;
+    min-width: 100px;
     flex-basis: 20%;
-    padding: 20px;
     min-height: 100px;
-    height: auto;
+    overflow: hidden;
 }
+
+#filter-wrapper{
+    background-color: white;
+    padding: 20px;
+}
+
 
 #results-c{
     display: flex;
@@ -121,12 +125,38 @@ p{
 }
 
 ul{
-    padding-left: 20px;
+    list-style: none;
+    padding: 0;
     margin: 3px 10px 3px 0px;
 }
 
 li{
     margin: 10px 0px;
+    padding-left: 1.3em;
+}
+
+li::before{
+    content: "\f00c"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+}
+
+.carinfo-km::before{
+    content: "\f018" !important; /* FontAwesome Unicode */
+}
+
+.carinfo-cam::before{
+    content: "\f042" !important; /* FontAwesome Unicode */
+}
+
+.carinfo-ano::before{
+    content: "\f073" !important; /* FontAwesome Unicode */
+}
+
+.carinfo-por::before{
+    content: "\f061" !important; /* FontAwesome Unicode */
 }
 
 .info-top-c h2{
