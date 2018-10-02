@@ -1,15 +1,14 @@
 <?php 
 require "header.html";
 require "dbconnect.php";
-?>
-
-<body>
+if(!isset($_GET["id"]) && !isset($_GET["c"])){
+echo '<body>
     <div id="wrapper">
         <div id="filter-c">
             <div id="filter-wrapper">
             <p>Filtrar por:</p>
-            <form class="form">
-            <?php
+            <form class="form">';
+            
                 $sql = $con->prepare("SELECT DISTINCT marca FROM pdb.carros");
                 $sql->execute();
                 $result = $sql->get_result();
@@ -18,7 +17,7 @@ require "dbconnect.php";
                 <hr>
                 <p class="filter-p">Fabricante:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<input type="checkbox" class="checkbox" name="'.$row["marca"].'">'.$row["marca"].'<br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?m='.$row["marca"].'">'.$row["marca"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT ano FROM pdb.carros");
@@ -28,7 +27,7 @@ require "dbconnect.php";
                 <hr>
                 <p class="filter-p">Ano:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<input type="checkbox" class="checkbox" name="'.$row["ano"].'">'.$row["ano"].'<br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?a='.$row["ano"].'">'.$row["ano"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT cor FROM pdb.carros");
@@ -38,7 +37,7 @@ require "dbconnect.php";
                 <hr>
                 <p class="filter-p">Cor:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<input type="checkbox" class="checkbox" name="'.$row["cor"].'">'.$row["cor"].'<br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?c='.$row["cor"].'">'.$row["cor"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT cambio FROM pdb.carros");
@@ -48,7 +47,7 @@ require "dbconnect.php";
                 <hr>
                 <p class="filter-p">Cambio:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<input type="checkbox" class="checkbox" name="'.$row["cambio"].'">'.$row["cambio"].'<br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?t='.$row["cambio"].'">'.$row["cambio"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT combustivel FROM pdb.carros");
@@ -58,7 +57,7 @@ require "dbconnect.php";
                 <hr>
                 <p class="filter-p">Combustível:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<input type="checkbox" class="checkbox" name="'.$row["combustivel"].'">'.$row["combustivel"].'<br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?g='.$row["combustivel"].'">'.$row["combustivel"].'</a><br>';
                 } echo '</div>';
             ?>
             <!-- <div class="filter-section-c">
@@ -152,6 +151,7 @@ require "dbconnect.php";
 
 
                 }
+            }
 ?>
             <!-- <div class="stock-item-c">
                 <div class="side-shadow">
