@@ -194,6 +194,29 @@ li::before{
     margin: auto;
 }
 
+#filter-show{
+    display: flex;
+    flex-direction: row;
+}
+
+.filter{
+    cursor: pointer;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+    margin: 2px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.filter p{
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.fa-times{
+    margin: auto auto auto 4px;
+}
+
 
 
 

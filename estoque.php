@@ -14,7 +14,7 @@ echo '<body>
                     $filterout = array_diff($array, array($id.'='.$value));
                     $linkfinal = "'estoque.php"."?".implode('&', $filterout)."'";
                     echo '<div onclick="window.location='.$linkfinal.';" class="filter">
-                        <p>'.$value.'</p>
+                    <i class="fa fa-times" aria-hidden="true"></i><p>'.$value.'</p>
                         </div>';
                 }
             echo '</div>
