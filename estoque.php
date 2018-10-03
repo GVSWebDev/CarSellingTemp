@@ -8,7 +8,59 @@ echo '<body>
             <div id="filter-wrapper">
             <p>Filtrar por:</p>
             <form class="form">';
-            
+
+                $condition = 'WHERE ';
+                $conditioncounter = 0;
+
+                if(isset($_GET["m"])){
+                    $condition .= 'marca = '.$_GET["m"];
+                    $conditioncounter++;
+                }
+
+                if(isset($_GET["a"])){
+                    $conditioncounter++;
+                    if($conditioncounter > 0){
+                        $condition .= ' AND ano = '.$_GET["a"];
+                    } else {
+                        $condition .= 'ano = '.$_GET["a"];
+                    }
+                }
+
+                if(isset($_GET["p"])){
+                    $conditioncounter++;
+                    if($conditioncounter > 0){
+                        $condition .= ' AND cor = '.$_GET["p"];
+                    } else {
+                        $condition .= 'cor = '.$_GET["p"];
+                    }
+                }
+
+                if(isset($_GET["t"])){
+                    $conditioncounter++;
+                    if($conditioncounter > 0){
+                        $condition .= ' AND transmissao = '.$_GET["t"];
+                    } else {
+                        $condition .= 'transmissao = '.$_GET["t"];
+                    }
+                }
+
+                if(isset($_GET["g"])){
+                    $conditioncounter++;
+                    if($conditioncounter > 0){
+                        $condition .= ' AND combustivel = '.$_GET["g"];
+                    } else {
+                        $condition .= 'combustivel = '.$_GET["g"];
+                    }
+                }
+                
+                echo $condition;
+
+                $pastconditions = '';
+
+                if(isset($_SERVER["QUERY_STRING"])){
+                    $pastconditions = '&'.$_SERVER["QUERY_STRING"];
+                }
+
                 $sql = $con->prepare("SELECT DISTINCT marca FROM pdb.carros");
                 $sql->execute();
                 $result = $sql->get_result();
@@ -17,7 +69,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Fabricante:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?m='.$row["marca"].'">'.$row["marca"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'">'.$row["marca"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT ano FROM pdb.carros");
@@ -27,7 +79,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Ano:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?a='.$row["ano"].'">'.$row["ano"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?a='.$row["ano"].$pastconditions.'">'.$row["ano"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT cor FROM pdb.carros");
@@ -37,7 +89,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Cor:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?c='.$row["cor"].'">'.$row["cor"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?p='.$row["cor"].$pastconditions.'">'.$row["cor"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT cambio FROM pdb.carros");
@@ -47,7 +99,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Cambio:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?t='.$row["cambio"].'">'.$row["cambio"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?t='.$row["cambio"].$pastconditions.'">'.$row["cambio"].'</a><br>';
                 } echo '</div>';
 
                 $sql = $con->prepare("SELECT DISTINCT combustivel FROM pdb.carros");
@@ -57,7 +109,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Combustível:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'&?g='.$row["combustivel"].'">'.$row["combustivel"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?g='.$row["combustivel"].$pastconditions.'">'.$row["combustivel"].'</a><br>';
                 } echo '</div>';
             ?>
             <!-- <div class="filter-section-c">
