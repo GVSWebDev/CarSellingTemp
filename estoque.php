@@ -162,8 +162,12 @@ echo '<body>
                     $sqlimg = $con->prepare("SELECT * FROM pdb.carros_img WHERE isprincipal = 1 AND carroid = ".$row["carroid"]);
                     $sqlimg->execute();
                     $resultimg = $sqlimg->get_result();
+                    if ($resultimg->num_rows === 0){
+                        $imagelink = 'resources/placeholder.png';
+                    } else {
                     $rowimg = $resultimg->fetch_assoc();
                     $imagelink = $rowimg["imglink"];
+                }
 
                     $sqlopc = $con->prepare("SELECT * FROM pdb.carros_opc WHERE carroid = ".$row["carroid"]);
                     $sqlopc->execute();
