@@ -228,6 +228,8 @@ echo '<body>
 
 
                 }
+            } else {
+                
             }
 ?>
             <!-- <div class="stock-item-c">
@@ -268,8 +270,7 @@ echo '<body>
                     </div>
                 </div>
             </div> -->
-        </div>
-    </div>
+        
 </body>
 
 <?php
