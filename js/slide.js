@@ -21,10 +21,14 @@ window.onload = function(){
     $("#prevImg").attr("src", $(".index"+$prevIndex).attr("src"));
     $("#main-display").attr("src", $(".index"+$currIndex).attr("src"));
     $("#nextImg").attr("src", $(".index"+$nextIndex).attr("src"));
+    $(".right-ready").css("transform", "translate("+$("#image-c").innerWidth()+"px, 0px)");
+    $(".left-ready").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
+    $(".leave-right").css("transform", "translate("+$("#image-c").innerWidth()+"px, 0px)");
+    $(".leave-left").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
 }
 
 window.onresize = function(){
-
+    updateTransform();
 }
 
 function nextRight(){
@@ -69,6 +73,7 @@ function nextLeft(){
     console.log("next index is "+ $nextIndex);
     updateClasses("right");
     updateIndex($currIndex, false);
+    
 }
 }
 
@@ -79,7 +84,15 @@ function updateClasses(direction){
     if (direction == "right"){$decider = 'prev'} else {$decider = "next"}
     $("#"+$decider+"Img").addClass("showing");
     $("#main-display").addClass("leave-"+direction).removeClass("showing");
+    updateTransform();
     intervalID1 = setInterval(waitForAnim, 700);
+}
+
+function updateTransform(){
+    $(".right-ready").css("transform", "translate("+$("#image-c").innerWidth()+"px, 0px)");
+    $(".left-ready").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
+    $(".leave-right").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
+    $(".leave-left").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
 }
 
 function waitForAnim(){
