@@ -558,9 +558,27 @@ li::before{
     margin: 6px 0px 4px 0px;
 }
 
+input:active{
+    border: 1px solid gray;
+}
+
+.input-full{
+    border: 1px solid gray;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+}
+
 .input-big{
     height: 100px;
     resize: none;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+    border: 1px solid gray;
+}
+
+.error{
+    font-size: 0.8em;
+    color: red;
 }
 
 .submit-btn{
@@ -602,3 +620,9 @@ li::before{
 
 
 
+
+@keyframes blink-red{
+    0% {border-color: gray;}
+    50% {border-color: red;}
+    100% {border-color: gray;}
+}
