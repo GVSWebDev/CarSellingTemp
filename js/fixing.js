@@ -1,6 +1,6 @@
 window.onscroll = function(){
-    if($(document).scrollTop() > 95){
-        $final = $(document).scrollTop() - 80;
+    if($(document).scrollTop() > $("#navbar").outerHeight()){
+        $final = $(document).scrollTop() - $("#navbar").outerHeight();
         $("#buy-section").css("margin-top", $final+"px");
     } else {
         $("#buy-section").css("margin-top", "0px");

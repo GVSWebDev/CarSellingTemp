@@ -344,7 +344,8 @@ li::before{
 .side-color{
     background: linear-gradient(to right, #ee5555, #ee6e55);
     height: 100%;
-    width: 4px;
+    width: 0px;
+    transition: 0.1s ease;
 }
 
 .prop-btn{
@@ -505,6 +506,11 @@ li::before{
     margin-left: 10px;
     position: absolute;
     top: 49%;
+    opacity: 0.9;
+}
+
+.arrow-img:hover{
+    opacity: 1;
 }
 
 .dsparrow-r{
@@ -524,6 +530,74 @@ li::before{
 
 .notrans{
     transition: 0s;
+}
+
+.prop-c{
+    visibility: hidden;
+    width: 90%;
+    margin: 0px auto;
+    transition: 2s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.form-c{
+    
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    padding: 10px;
+    border-top: 0px solid !important;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form p{
+    margin: 6px 0px 4px 0px;
+}
+
+.input-big{
+    height: 100px;
+    resize: none;
+}
+
+.submit-btn{
+    max-width: 130px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: #f7f7f7;
+    border-color: #a1a1a1;
+    border-style: solid;
+    border-radius: 1px;
+    border-width: 1px;
+    color: #202020;
+    box-shadow: 0px 2px 0px 0px #fa4c4c;
+    transition: 0.2s ease;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+.prop-open{
+    margin-bottom: 0px;
+}
+
+.form-active{
+    visibility: visible;
+    max-height: 400px;
+}
+
+.submit-btn:hover{
+    transform: translate(0px, 1px);
+    box-shadow: 0px 1px 0px 0px #d14200;
+}
+
+.submit-btn:active{
+    transform: translate(0px, 2px);
+    box-shadow: 0px 0px 0px 0px #d14200;
 }
 
 
