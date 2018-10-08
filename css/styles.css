@@ -61,6 +61,7 @@ p{
     display: flex;
     flex-direction: row;
     margin: 25px auto auto auto;
+    position: relative;
 }
 
 #filter-c{
@@ -505,7 +506,6 @@ li::before{
     position: absolute;
     top: 49%;
 }
-
 
 .dsparrow-r{
    right: 0%;
