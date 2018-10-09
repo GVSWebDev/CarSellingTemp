@@ -21,5 +21,5 @@ function setTab(index){
 
 function setContent(cont){
     $(".about-content").css("display", "none");
-    $("#"+cont).css("display", "block");
+    $("#"+cont).css("display", "flex");
 }

@@ -136,6 +136,10 @@ li{
     padding-left: 1.3em;
 }
 
+.li-imp::before{
+    color: #ee6e55;
+}
+
 li::before{
     content: "\f00c"; /* FontAwesome Unicode */
     font-family: FontAwesome;
@@ -282,6 +286,7 @@ li::before{
 .about-content{
     background-color: white;
     max-height: 300px;
+    padding: 5px 0px;
 }
 
 #divider{
@@ -380,19 +385,26 @@ li::before{
 
 .tel-btn{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin: auto;
+    margin: 10px auto;
     width: 100%;
     height: 60px;
     background: linear-gradient(to right, #ee5555, #ee6e55);
     color: white;
     cursor: pointer;
+    text-align: center;
 }
 
 .tel-btn h4{
     font-size: 1.7em;
     display: flex;
-    margin: auto;
+    margin: auto 10px;
+    word-break: keep-all;
+}
+
+.zip-zop{
+    background: linear-gradient(to right, #59cf49, #3db461)
 }
 
 #picture-block{
@@ -606,8 +618,13 @@ input:active{
     font-size: 0.8em;
 }
 
+.extras-li{
+    margin-left: 25px !important;
+}
+
 .prop-open{
     margin-bottom: 0px;
+    border-color: #d8815e;
 }
 
 .form-active{
@@ -623,6 +640,38 @@ input:active{
 .submit-btn:active{
     transform: translate(0px, 2px);
     box-shadow: 0px 0px 0px 0px #d14200;
+}
+
+#content-o{
+    max-height: 150px;
+}
+
+#content-e{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.about-section{
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(212, 212, 212);
+    padding: 5px;
+    margin: 5px;
+}
+
+.about-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[class^="fa"], [class*=" fa"] {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 
