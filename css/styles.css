@@ -269,8 +269,8 @@ li::before{
     border-top: 1px solid #202c3c;
     border-bottom: 1px solid #202c3c;
     cursor: pointer;
-    opacity: 0.7;
-    transition: 0.5s ease;
+    opacity: 0.9;
+    transition: 0.1s ease;
 }
 
 .tab-show{
@@ -566,6 +566,13 @@ input:active{
     border: 1px solid gray;
     animation-duration: 2s;
     animation-iteration-count: 4;
+    height: 20px;
+}
+
+.input-full:focus, .input-big:focus{
+    outline: none;
+    border: 1px solid rgb(238, 81, 81);
+    box-shadow: 0 0 5px rgb(238, 81, 81);
 }
 
 .input-big{

@@ -14,7 +14,10 @@ $("form").submit(function(event) {
     if($email.indexOf('@') == -1 || $email.indexOf('.') == -1){
       if(!$("#proposal-block").find('.form-active').find('#email-error').length){
         $("#proposal-block").find('.form-active').find("[name='"+$activeForm[2]["name"]+"']").before("<span id='email-error' class='error'>Digite um email válido</span>");
-    }}
+    }
+  } else {
+    $("#proposal-block").find('.form-active').find('#email-error').remove();
+  }
     event.preventDefault();
   });
 
