@@ -11,6 +11,7 @@ function setForm(i){
     $("#proposal-block").find(".prop-c").removeClass("form-active");
     $("#"+i+"-c").addClass("form-active");
     }
+   
 }
 
 function setTab(index){
