@@ -229,7 +229,294 @@ echo '<body>
 
                 }
             } else {
+                echo '<body>
+                <script src="js/slide.js"></script>
+                <script src="js/tab-controller.js"></script>
+                <div id="wrapper">
+                    <div id="info-section">';
+                    $sql = "SELECT * FROM pdb.carros WHERE carroid = ".$_GET["id"];
+                    $result = $con->query($sql);
+
+                    if($result->num_rows > 0){
+                        $row = $result->fetch_assoc();
+                    } else {
+                        echo "0 results";
+                    }
+                        echo '<div id="name-block">
+                            <div id="name-c">
+                                <h1>'.$row['marca']." ".$row['nome'].'</h1>
+                            </div>
+                            <div id="id-c">
+                                <p>ID '.$row['carroid'].'</p>
+                            </div>
+                        </div>
+                        <div id="picture-block">
+                            <div id="main-display-c">
+                                <div class="display-arrow" onclick="nextLeft()">
+                                    <img src="resources/arrow.png" class="arrow-img">
+                                </div>
+                                <div id="image-c">
+                                    <div class="blockifier left-block">
+                                        <img src="" id="prevImg" class="notrans left-ready main-image">
+                                    </div>
+                                    <div class="blockifier middle-block">
+                                    <img src="" class="notrans showing main-image" id="main-display">
+                                </div>
+                                <div class="blockifier right-block">
+                                    <img src="" id="nextImg" class="notrans right-ready main-image">
+                                </div>
+                                </div>
+                                <div class="display-arrow dsparrow-r" onclick="nextRight()">
+                                    <img src="resources/arrow.png" class="arrow-img right-r">
+                                </div>
+                            </div>
+                            <div id="preview-c">';
+                                $sqlthumb = "SELECT * FROM pdb.carros_img WHERE carroid = ".$_GET['id'];
+                                $resultthumb = $con->query($sqlthumb);
+
+                                if($resultthumb->num_rows > 0){
+                                    while($rowthumb = $resultthumb->fetch_assoc()){
+                                        echo "<img src='".$rowthumb['imglink']."' class='thumbnail'>";
+                                    }
+                            
+                                } else {
+                                    echo "<img src='resources/placeholder.png' class='thumbnail'>";
+                                }
+                            echo '</div>
+                        </div>
+                        <div id="about-block">
+                            <div id="tabs-c">
+                                <div id="des-c" onclick="setTab('."'".'des-c'."'".'); setContent('."'".'content-d'."'".')" class="tab tab-show">
+                                    <p>Descrição</p>
+                                </div>
+                                <div id="specs-c" onclick="setTab('."'".'specs-c'."'".'); setContent('."'".'content-e'."'".')" class="tab">
+                                    <p>Especificações</p>
+                                </div>
+                                <div id="opc-c" onclick="setTab('."'".'opc-c'."'".'); setContent('."'".'content-o'."'".')" class="tab">
+                                    <p>Opcionais</p>
+                                </div>
+                            </div>
+                            <div id="divider"></div>
+                            <div id="content-d" class="about-content" style="display: flex;">
+                                <p>'.$row["descricao"].'</p>
+                            </div>
+                            <div id="content-e" class="about-content" style="display: none;">
+                                <div id="km-container" class="about-section">
+                                        <i class="fa fa-tachometer fa-3x" aria-hidden="true"></i>
+                                        <div class="about-text">
+                                    <p>Kilometragem: '.$row['kilometragem'].'km</p>
+                                    <p>Gasolina: '.$row['combustivel'].'</p>
+                                </div>
+                                </div>
+                                <div id="color-container" class="about-section">
+                                        <i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i>
+                                        <div class="about-text">
+                                    <p>Cor exterior: '.$row['cor'].'</p>
+                                    <p>Cor interior: '.$row['corint'].'</p>
+                                </div>
+                                </div>
+                                <div id="engine-container" class="about-section">
+                                        <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                                        <div class="about-text">
+                                    <p>'.$row['motor'].' '.$row['cavalaria'].'</p>
+                                    <p>Tração '.$row['tracao'].'</p>
+                                    <p>Transmissão '.$row['cambio'].'</p>
+                                </div>
+                                </div>
+                                <div id="year-container" class="about-section">
+                                        <i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
+                                    <div class="about-text">
+                                        <p>Ano: '.$row['ano'].'</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="content-o" class="about-content" style="display: none;">
+                                    <ul class="extras-c">';
+                                        $sqlop = "SELECT * FROM pdb.carros_opc WHERE carroid = ".$_GET['id'];
+                                        $resultop = $con->query($sqlop);
+
+                                        if($resultop->num_rows > 0){
+                                            while($rowop = $resultop->fetch_assoc()){
+                                                if ($rowop["destaque"] == 1){
+                                                    echo "<li class='extras-li li-imp'>".$rowop["opcional"]."</li>";
+                                                } else {
+                                                    echo "<li class='extras-li'>".$rowop["opcional"]."</li>";
+                                                }
+                                            }
+                                        } else {
+                                            echo "0 results";
+                                        }
+                                        
+                                    echo '</ul>
+                            </div>
+                        </div>
+                        <div id="rec-container">
+                            <div id="rec-text">
+                                <h2>Recomendado para você:</h2>
+                            </div>
+                      
+                            <div id="rec-list">
+                                <div class="rec-item">
+                                    <div class="rec-img-c">
+                                        <img src="resources/focus.jpg" class="rec-img">
+                                    </div>
+                                    <div class="rec-text-c">
+                                        <div class="rec-text-title">
+                                            <h4>Peugeot 206 12V</h4>
+                                        </div>
+                                        <div class="rec-specs-c">
+                                            <div class="rec-specs-item">
+                                                <p>Ano</p>
+                                                <div class="separator"></div>
+                                                <p>2016</p>
+                                            </div>
+                                            <div class="rec-specs-item">
+                                                <p>Kilometragem</p>
+                                                <div class="separator"></div>
+                                                <p>30000km</p>
+                                            </div>
+                                            <div class="rec-specs-item">
+                                                <p>Gasolina</p>
+                                                <div class="separator"></div>
+                                                <p>Flex</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rec-shadow"></div>
+                                </div>
+                                <div class="rec-item">
+                                    <div class="rec-img-c">
+                                        <img src="resources/focus.jpg" class="rec-img">
+                                    </div>
+                                    <div class="rec-text-c">
+                                        <div class="rec-text-title">
+                                            <h4>Peugeot 206 12V</h4>
+                                        </div>
+                                        <div class="rec-specs-c">
+                                            <div class="rec-specs-item">
+                                                <p>Ano</p>
+                                                <div class="separator"></div>
+                                                <p>2016</p>
+                                            </div>
+                                            <div class="rec-specs-item">
+                                                <p>Kilometragem</p>
+                                                <div class="separator"></div>
+                                                <p>30000km</p>
+                                            </div>
+                                            <div class="rec-specs-item">
+                                                <p>Gasolina</p>
+                                                <div class="separator"></div>
+                                                <p>Flex</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rec-shadow"></div>
+                                </div>
+                                <div class="rec-item">
+                                    <div class="rec-img-c">
+                                        <img src="resources/focus.jpg" class="rec-img">
+                                    </div>
+                                    <div class="rec-text-c">
+                                        <div class="rec-text-title">
+                                            <h4>Peugeot 206 12V</h4>
+                                        </div>
+                                        <div class="rec-specs-c">
+                                            <div class="rec-specs-item">
+                                                <p>Ano</p>
+                                                <div class="separator"></div>
+                                                <p>2016</p>
+                                            </div>
+                                            <div class="rec-specs-item">
+                                                <p>Kilometragem</p>
+                                                <div class="separator"></div>
+                                                <p>30000km</p>
+                                            </div>
+                                            <div class="rec-specs-item">
+                                                <p>Gasolina</p>
+                                                <div class="separator"></div>
+                                                <p>Flex</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rec-shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="buy-section" class="buy-fixed">
+                        <div id="price-block">
+                            <div id="price-h2">
+                                <h2>Preço</h2>
+                            </div>
+                            <div id="price">
+                                <h1>R$'.$row["preco"].'</h1>
+                            </div>
+                        </div>
+                        <div id="proposal-block">
+                            <div id="proposal-button" class="prop-btn" onclick="setForm('."'".'proposal'."'".')">
+                                <div class="side-color"></div>
+                                <p>Fazer Proposta</p>
+                            </div>
+                            <div class="prop-c" id="proposal-c">
+                                <div class="form-c">
+                                    <form class="form" id="form-test" name="proposta-normal">
+                                        <p>Nome:</p>
+                                        <input name="nome" type="text" class="input-full">
+                                        <p>Telefone:</p>
+                                        <input name="telefone" type="text" class="input-full">
+                                        <p>Email:</p>
+                                        <input name="email" type="email" class="input-full">
+                                        <p>Mensagem:</p>
+                                        <textarea name="mensagem" class="input-big"></textarea>   
+                                        <input class="submit-btn" type="submit" value="Enviar">
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="troca-button" class="prop-btn" onclick="setForm('."'".'troca'."'".')">
+                                <div class="side-color"></div>
+                                <p>Fazer Proposta de Troca</p>
+                            </div>
+                            <div class="prop-c" id="troca-c">
+                                <div class="form-c">
+                                    <form class="form" action="">
+                                        <p>Nome:</p>
+                                        <input name="nome" type="text" class="input-full">
+                                        <p>Telefone:</p>
+                                        <input name="telefone" type="text" class="input-full">
+                                        <p>Email:</p>
+                                        <input name="email" type="email" class="input-full">
+                                        <p>Mensagem:</p>
+                                        <textarea name="mensagem" class="input-big"></textarea>
+                                        <input class="submit-btn" type="submit" value="Enviar">
+                                    </form>
+                                </div>
+                            </div>
+                            <script src="js/form-validation.js"></script>
+                            <div id="finance-button" class="prop-btn" onclick="setForm('."'".'finance'."'".')">
+                                <div class="side-color"></div>
+                                <p>Simular Financiamento</p>
+                            </div>
+                            <div id="contact-c">
+                                <h3>Contato:</h3>
+                                <div class="tel-btn">
+                                        <div class="tel-btn-content">
+                                    <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                                    <h4> (43) 3304-0132</h4>
+                                </div>
+                                </div>
+                                <div class="tel-btn zip-zop">
+                                    <div class="tel-btn-content">
+                                        <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i>
+                                        <h4>(43) 99824-4337</h4>
+                                    </div>
+                                    </div>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
                 
+            </body>';
             }
 ?>
             <!-- <div class="stock-item-c">
