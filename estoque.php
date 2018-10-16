@@ -82,7 +82,7 @@ echo '<body>
                     $pastconditions = implode('&', array_unique(explode('&', $pastconditions)));
                 }
 
-                $sql = "SELECT DISTINCT marca FROM pdb.carros ".$condition;
+                $sql = "SELECT DISTINCT marca FROM gvswebde_pdb.carros ".$condition;
                 
                 $result = $con->query($sql);
                 if($result->num_rows === 0) exit ("0 matches");
@@ -93,7 +93,7 @@ echo '<body>
                     echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'">'.$row["marca"].'</a><br>';
                 } echo '</div>';
 
-                $sql = "SELECT DISTINCT ano FROM pdb.carros ".$condition;
+                $sql = "SELECT DISTINCT ano FROM gvswebde_pdb.carros ".$condition;
                 
                 $result = $con->query($sql);
                 echo '<div class="filter-section-c">
@@ -103,7 +103,7 @@ echo '<body>
                     echo '<a href="'.$_SERVER["PHP_SELF"].'?a='.$row["ano"].$pastconditions.'">'.$row["ano"].'</a><br>';
                 } echo '</div>';
 
-                $sql = "SELECT DISTINCT cor FROM pdb.carros ".$condition;
+                $sql = "SELECT DISTINCT cor FROM gvswebde_pdb.carros ".$condition;
                 
                 $result = $con->query($sql);
                 echo '<div class="filter-section-c">
@@ -113,7 +113,7 @@ echo '<body>
                     echo '<a href="'.$_SERVER["PHP_SELF"].'?p='.$row["cor"].$pastconditions.'">'.$row["cor"].'</a><br>';
                 } echo '</div>';
 
-                $sql = "SELECT DISTINCT cambio FROM pdb.carros ".$condition;
+                $sql = "SELECT DISTINCT cambio FROM gvswebde_pdb.carros ".$condition;
                 
                 $result = $con->query($sql);
                 echo '<div class="filter-section-c">
@@ -123,7 +123,7 @@ echo '<body>
                     echo '<a href="'.$_SERVER["PHP_SELF"].'?t='.$row["cambio"].$pastconditions.'">'.$row["cambio"].'</a><br>';
                 } echo '</div>';
 
-                $sql = "SELECT DISTINCT combustivel FROM pdb.carros ".$condition;
+                $sql = "SELECT DISTINCT combustivel FROM gvswebde_pdb.carros ".$condition;
     
                 $result = $con->query($sql);
                 echo '<div class="filter-section-c">
@@ -153,15 +153,15 @@ echo '<body>
         </div>
         <div id="results-c">
             <?php
-                $sql = "SELECT * FROM pdb.carros ".$condition;
+                $sql = "SELECT * FROM gvswebde_pdb.carros ".$condition;
                 /* echo $sql; */
                 $result = $con->query($sql);
 
                 if($result->num_rows === 0) exit ("0 matches");
                 while($row = $result->fetch_assoc()){
-                    $sqlimg = $con->prepare("SELECT * FROM pdb.carros_img WHERE isprincipal = 1 AND carroid = ".$row["carroid"]);
-                    $sqlimg->execute();
-                    $resultimg = $sqlimg->get_result();
+                    $sqlimg = "SELECT * FROM gvswebde_pdb.carros_img WHERE isprincipal = 1 AND carroid = ".$row["carroid"];
+                    
+                    $resultimg = $con->query($sqlimg);
                     if ($resultimg->num_rows === 0){
                         $imagelink = 'resources/placeholder.png';
                     } else {
@@ -169,9 +169,9 @@ echo '<body>
                     $imagelink = $rowimg["imglink"];
                 }
 
-                    $sqlopc = $con->prepare("SELECT * FROM pdb.carros_opc WHERE carroid = ".$row["carroid"]);
-                    $sqlopc->execute();
-                    $resultopc = $sqlopc->get_result();
+                    $sqlopc = "SELECT * FROM gvswebde_pdb.carros_opc WHERE carroid = ".$row["carroid"];
+                    
+                    $resultopc = $con->query($sqlopc);
                     $semopcionais = false;
 
                     $opccounter = 0;
@@ -234,7 +234,7 @@ echo '<body>
                 <script src="js/tab-controller.js"></script>
                 <div id="wrapper">
                     <div id="info-section">';
-                    $sql = "SELECT * FROM pdb.carros WHERE carroid = ".$_GET["id"];
+                    $sql = "SELECT * FROM gvswebde_pdb.carros WHERE carroid = ".$_GET["id"];
                     $result = $con->query($sql);
 
                     if($result->num_rows > 0){
@@ -271,7 +271,7 @@ echo '<body>
                                 </div>
                             </div>
                             <div id="preview-c">';
-                                $sqlthumb = "SELECT * FROM pdb.carros_img WHERE carroid = ".$_GET['id'];
+                                $sqlthumb = "SELECT * FROM gvswebde_pdb.carros_img WHERE carroid = ".$_GET['id'];
                                 $resultthumb = $con->query($sqlthumb);
 
                                 if($resultthumb->num_rows > 0){
@@ -332,7 +332,7 @@ echo '<body>
                             </div>
                             <div id="content-o" class="about-content" style="display: none;">
                                     <ul class="extras-c">';
-                                        $sqlop = "SELECT * FROM pdb.carros_opc WHERE carroid = ".$_GET['id'];
+                                        $sqlop = "SELECT * FROM gvswebde_pdb.carros_opc WHERE carroid = ".$_GET['id'];
                                         $resultop = $con->query($sqlop);
 
                                         if($resultop->num_rows > 0){
