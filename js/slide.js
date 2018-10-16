@@ -11,6 +11,10 @@ window.onload = function(){
     console.log($imagesAmount);
     $prevIndex = $imagesAmount;
 
+    if ($imagesAmount < 2){
+        $(".display-arrow").css("display", "none");
+    }
+
     for (i = 0; i <= $imagesAmount; i++){
         ic = i + 1;
         console.log("loop starting");
