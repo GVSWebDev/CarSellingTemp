@@ -78,6 +78,7 @@ p{
 }
 
 
+
 #results-c{
     display: flex;
     flex-direction: column;
@@ -247,8 +248,8 @@ li::before{
     width: 100%;
 }
 
-#name-block h1, p{
-    margin: 10px 0px;
+#name-block h1, #name-block p{
+    margin: 10px;
 }
 
 
