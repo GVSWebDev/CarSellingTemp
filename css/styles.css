@@ -1,6 +1,6 @@
 html, body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #e3e3e3;
+    background-color: #f1f1f1;
 }
 
 body{
@@ -70,11 +70,13 @@ p{
     flex-basis: 20%;
     min-height: 100px;
     overflow: hidden;
+    
 }
 
 #filter-wrapper{
     background-color: white;
     padding: 20px;
+    border: 1px solid rgb(219, 219, 219);
 }
 
 
@@ -93,6 +95,7 @@ p{
     height: 250px;
     background-color: white;
     margin-bottom: 20px;
+    border: 1px solid rgb(219, 219, 219);
 }
 
 .side-shadow{
@@ -427,6 +430,7 @@ li::before{
     background-color: white;
     margin-bottom: 20px;
     width: 100%;
+    border: 1px solid rgb(219, 219, 219);
 }
 
 #main-display-c{
