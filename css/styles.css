@@ -356,6 +356,10 @@ li::before{
     border: 1px solid rgb(219, 219, 219);
 }
 
+#proposal-button{
+    margin-top: 15px;
+}
+
 .side-color{
     background: linear-gradient(to right, #ee5555, #ee6e55);
     height: 100%;
