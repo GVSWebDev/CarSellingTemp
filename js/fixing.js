@@ -1,6 +1,6 @@
 window.onscroll = function(){
-    if($(document).scrollTop() > $("#navbar").outerHeight() && $(document).scrollTop() <= $("#navbar").outerHeight() + $("#wrapper").outerHeight() - ($("#price-block").outerHeight() + $("#proposal-block").outerHeight()) - 20){
-        $final = $(document).scrollTop() - $("#navbar").outerHeight();
+    if($(document).scrollTop() > $("#navbar").outerHeight() + $("#top-container").outerHeight(true) && $(document).scrollTop() <= $("#navbar").outerHeight() + $("#wrapper").outerHeight() - ($("#price-block").outerHeight() + $("#proposal-block").outerHeight()) - 20){
+        $final = $(document).scrollTop() - ($("#navbar").outerHeight() +  $("#top-container").outerHeight(true));
         $("#buy-section").css("margin-top", $final+"px");
     } else if ($(document).scrollTop() < $("#navbar").outerHeight()){
         $("#buy-section").css("margin-top", "0px");
