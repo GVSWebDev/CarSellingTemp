@@ -1,12 +1,18 @@
 <?php 
+setlocale(LC_CTYPE, 'pt_BR');
 require "header.html";
 require "dbconnect.php";
+
+function removeAcentos($string){
+    return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$string);
+}
+
 if(!isset($_GET["id"]) && !isset($_GET["c"])){
 echo '<body>
     <div id="wrapper">
         <div id="filter-c">
             <div id="filter-wrapper">
-            <p>Filtrar por:</p>
+            <h2 id="p-desgramento">Filtrar por:</h2>
             <div id="filter-show">';
                 foreach ($_GET as $id => $value){
                     $pastqueries = $_SERVER["QUERY_STRING"];
@@ -87,10 +93,10 @@ echo '<body>
                 $result = $con->query($sql);
                 if($result->num_rows === 0) exit ("0 matches");
                 echo '<div class="filter-section-c">
-                <hr>
+                
                 <p class="filter-p">Fabricante:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'">'.$row["marca"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'"><p>'.$row["marca"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT ano FROM gvswebde_pdb.carros ".$condition;
@@ -100,7 +106,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Ano:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?a='.$row["ano"].$pastconditions.'">'.$row["ano"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?a='.$row["ano"].$pastconditions.'"><p>'.$row["ano"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT cor FROM gvswebde_pdb.carros ".$condition;
@@ -110,7 +116,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Cor:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?p='.$row["cor"].$pastconditions.'">'.$row["cor"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?p='.$row["cor"].$pastconditions.'"><p>'.$row["cor"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT cambio FROM gvswebde_pdb.carros ".$condition;
@@ -120,7 +126,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Cambio:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?t='.$row["cambio"].$pastconditions.'">'.$row["cambio"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?t='.removeAcentos($row["cambio"]).$pastconditions.'"><p>'.$row["cambio"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT combustivel FROM gvswebde_pdb.carros ".$condition;
@@ -130,7 +136,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Combustível:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?g='.$row["combustivel"].$pastconditions.'">'.$row["combustivel"].'</a><br>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?g='.$row["combustivel"].$pastconditions.'"><p>'.$row["combustivel"].'</p></a>';
                 } echo '</div>';
             ?>
             <!-- <div class="filter-section-c">

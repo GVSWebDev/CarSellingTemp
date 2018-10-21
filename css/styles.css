@@ -798,6 +798,33 @@ input:active{
     margin-top: 15px;
 }
 
+.filter-section-c a p{
+    display: inline-block;
+    width: auto;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+    padding: 4px;
+    color: white;
+    margin: 2px 0px;
+}
+
+.filter-section-c{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-section-c a{
+    display: inline-block;
+    width: 50px;
+}
+
+#filter-show{
+    margin: 3px 0px 10px 0px;
+}
+
+#p-desgramento{
+    margin: 0px 0px 10px 0px;
+}
+
 
 
 
