@@ -205,6 +205,7 @@ li::before{
 
 #filter-show{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
@@ -825,7 +826,9 @@ input:active{
     margin: 0px 0px 10px 0px;
 }
 
-
+.al-set{
+    background: linear-gradient(to right, rgb(216, 216, 216), rgb(223, 223, 223)) !important;
+}
 
 
 @keyframes blink-red{

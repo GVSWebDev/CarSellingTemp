@@ -7,6 +7,18 @@ function removeAcentos($string){
     return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$string);
 }
 
+function addAlSetClass($filterstring){
+    echo "<script>
+        $(document).ready(function(){
+        if(".$filterstring." === ".'"Automatico"'."){
+            $('.filter-a-p:contains(".'"Automático"'.")').addClass('al-set');
+        } else {
+            $('.filter-a-p:contains(".$filterstring.")').addClass('al-set');
+        }
+        });
+    </script>";
+}
+
 if(!isset($_GET["id"]) && !isset($_GET["c"])){
 echo '<body>
     <div id="wrapper">
@@ -22,6 +34,7 @@ echo '<body>
                     echo '<div onclick="window.location='.$linkfinal.';" class="filter">
                     <i class="fa fa-times" aria-hidden="true"></i><p>'.$value.'</p>
                         </div>';
+                    addAlSetClass('"'.$_GET[$id].'"');
                 }
             echo '</div>
             <form class="form">';
@@ -33,6 +46,7 @@ echo '<body>
                     $_GET["m"] = $con->real_escape_string($_GET['m']);
                     $condition .= 'marca = "'.$_GET["m"].'"';
                     $conditioncounter++;
+                    
                 }
 
                 if(isset($_GET["a"])){
@@ -96,7 +110,7 @@ echo '<body>
                 
                 <p class="filter-p">Fabricante:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'"><p>'.$row["marca"].'</p></a>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'"><p class="filter-a-p">'.$row["marca"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT ano FROM gvswebde_pdb.carros ".$condition;
@@ -106,7 +120,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Ano:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?a='.$row["ano"].$pastconditions.'"><p>'.$row["ano"].'</p></a>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?a='.$row["ano"].$pastconditions.'"><p class="filter-a-p">'.$row["ano"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT cor FROM gvswebde_pdb.carros ".$condition;
@@ -116,7 +130,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Cor:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?p='.$row["cor"].$pastconditions.'"><p>'.$row["cor"].'</p></a>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?p='.$row["cor"].$pastconditions.'"><p class="filter-a-p">'.$row["cor"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT cambio FROM gvswebde_pdb.carros ".$condition;
@@ -126,7 +140,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Cambio:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?t='.removeAcentos($row["cambio"]).$pastconditions.'"><p>'.$row["cambio"].'</p></a>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?t='.removeAcentos($row["cambio"]).$pastconditions.'"><p class="filter-a-p">'.$row["cambio"].'</p></a>';
                 } echo '</div>';
 
                 $sql = "SELECT DISTINCT combustivel FROM gvswebde_pdb.carros ".$condition;
@@ -136,7 +150,7 @@ echo '<body>
                 <hr>
                 <p class="filter-p">Combustível:</p>';
                 while($row = $result->fetch_assoc()){
-                    echo '<a href="'.$_SERVER["PHP_SELF"].'?g='.$row["combustivel"].$pastconditions.'"><p>'.$row["combustivel"].'</p></a>';
+                    echo '<a href="'.$_SERVER["PHP_SELF"].'?g='.$row["combustivel"].$pastconditions.'"><p class="filter-a-p">'.$row["combustivel"].'</p></a>';
                 } echo '</div>';
             ?>
             <!-- <div class="filter-section-c">
