@@ -21,7 +21,7 @@ window.onload = function(){
         $(".thumbnail:eq("+i+")").addClass("index"+ic).attr("onclick", "updateIndex("+ic+", true)");
         console.log("loop done with index "+ ic);
     }
-
+    $(".index1").addClass("tab-selected");
     $("#prevImg").attr("src", $(".index"+$prevIndex).attr("src"));
     $("#main-display").attr("src", $(".index"+$currIndex).attr("src"));
     $("#nextImg").attr("src", $(".index"+$nextIndex).attr("src"));

@@ -370,7 +370,7 @@ echo '<body>
                                                 }
                                             }
                                         } else {
-                                            echo "0 results";
+                                            echo "Sem opcionais";
                                         }
                                         
                                     echo '</ul>

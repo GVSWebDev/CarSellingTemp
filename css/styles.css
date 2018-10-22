@@ -645,6 +645,10 @@ input:active{
     margin-left: 25px !important;
 }
 
+.extras-anchor{
+    margin-left: 25px;
+}
+
 .prop-open{
     margin-bottom: 0px;
     border-color: #d8815e;
