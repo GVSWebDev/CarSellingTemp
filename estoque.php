@@ -177,7 +177,7 @@ echo '<body>
                 /* echo $sql; */
                 $result = $con->query($sql);
 
-                if($result->num_rows === 0) exit ("0 matches");
+                if($result->num_rows === 0) exit ("Estoque não encontrado!");
                 while($row = $result->fetch_assoc()){
                     $sqlimg = "SELECT * FROM gvswebde_pdb.carros_img WHERE isprincipal = 1 AND carroid = ".$row["carroid"];
                     
@@ -189,7 +189,7 @@ echo '<body>
                     $imagelink = $rowimg["imglink"];
                 }
 
-                    $sqlopc = "SELECT * FROM gvswebde_pdb.carros_opc WHERE carroid = ".$row["carroid"];
+                    $sqlopc = "SELECT * FROM gvswebde_pdb.carros_opc WHERE carroid = ".$row["carroid"]." ORDER BY destaque DESC";
                     
                     $resultopc = $con->query($sqlopc);
                     $semopcionais = false;
