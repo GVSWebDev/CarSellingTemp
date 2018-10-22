@@ -810,6 +810,8 @@ input:active{
     padding: 4px;
     color: white;
     margin: 2px 0px;
+    word-break: keep-all;
+    white-space: nowrap;
 }
 
 .filter-section-c{
@@ -819,7 +821,7 @@ input:active{
 
 .filter-section-c a{
     display: inline-block;
-    width: 50px;
+    max-width: 50px;
 }
 
 #filter-show{
