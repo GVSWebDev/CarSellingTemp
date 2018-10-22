@@ -113,7 +113,7 @@ echo '<body>
                     echo '<a href="'.$_SERVER["PHP_SELF"].'?m='.$row["marca"].$pastconditions.'"><p class="filter-a-p">'.$row["marca"].'</p></a>';
                 } echo '</div>';
 
-                $sql = "SELECT DISTINCT ano FROM gvswebde_pdb.carros ".$condition;
+                $sql = "SELECT DISTINCT ano FROM gvswebde_pdb.carros ".$condition." ORDER BY ano DESC";
                 
                 $result = $con->query($sql);
                 echo '<div class="filter-section-c">
