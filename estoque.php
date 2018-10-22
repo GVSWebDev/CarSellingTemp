@@ -358,7 +358,7 @@ echo '<body>
                             </div>
                             <div id="content-o" class="about-content" style="display: none;">
                                     <ul class="extras-c">';
-                                        $sqlop = "SELECT * FROM gvswebde_pdb.carros_opc WHERE carroid = ".$_GET['id'];
+                                        $sqlop = "SELECT * FROM gvswebde_pdb.carros_opc WHERE carroid = ".$_GET['id']." ORDER BY destaque DESC";
                                         $resultop = $con->query($sqlop);
 
                                         if($resultop->num_rows > 0){
@@ -545,44 +545,7 @@ echo '<body>
             </body>';
             }
 ?>
-            <!-- <div class="stock-item-c">
-                <div class="side-shadow">
-
-                </div>
-                <div class="car-image-c">
-                    <img src="resources/peujeot.jpg" class="car-image">
-                </div>
-                <div class="info-text-c">
-                    <div class="info-top-c">
-                        <h2>Peugeot 208 1.2 Allure 12V FLEX</h2>
-                        <hr>
-                    </div>
-                    <div class="info-bottom-c">
-                        <ul class="carinfo-c">
-                            <li class="carinfo-li">30.000km</li>
-                            <li class="carinfo-li">Cambio Manual</li>
-                            <li class="carinfo-li">Ano 2007</li>
-                            <li class="carinfo-li">4 Portas</li>
-                        </ul>
-                        <ul class="extras-c">
-                            <li class="extras-li">Ar-condicionado</li>
-                            <li class="extras-li">Vidros eletricos</li>
-                            <li class="extras-li">Travas eletricas</li>
-                            <a class="extras-anchor">+5 opcionais</a>
-                        </ul>
-                    </div>
-                </div>
-                <div class="side-separator">
-
-                </div>
-                <div class="price-c">
-                    <h1 class="price">R$38,000.00</h1>
-                    <p class="finance-p">Simule um financiamento</p>
-                    <div class="saiba-mais-c">
-                        <h2>Saiba mais</h2>
-                    </div>
-                </div>
-            </div> -->
+            
         
 </body>
 
