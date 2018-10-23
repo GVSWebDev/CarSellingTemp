@@ -27,10 +27,12 @@ echo '<body>
             <h2 id="p-desgramento">Filtrar por:</h2>
             <div id="filter-show">';
                 foreach ($_GET as $id => $value){
-                    $pastqueries = $_SERVER["QUERY_STRING"];
+                    $pastqueries = $_SERVER["QUERY_STRING"];    
+                    $valueconv = str_replace(' ', '+', $value);
                     $array = explode('&', $pastqueries);
-                    $filterout = array_diff($array, array($id.'='.$value));
-                    $linkfinal = "'estoque.php"."?".implode('&', $filterout)."'";
+                    $filterout = array_diff($array, array($id.'='.$valueconv));
+                    $goesonlink = implode('&', $filterout);
+                    $linkfinal = "'estoque.php"."?".$goesonlink."'";
                     echo '<div onclick="window.location='.$linkfinal.';" class="filter">
                     <i class="fa fa-times" aria-hidden="true"></i><p>'.$value.'</p>
                         </div>';
@@ -153,20 +155,6 @@ echo '<body>
                     echo '<a href="'.$_SERVER["PHP_SELF"].'?g='.$row["combustivel"].$pastconditions.'"><p class="filter-a-p">'.$row["combustivel"].'</p></a>';
                 } echo '</div>';
             ?>
-            <!-- <div class="filter-section-c">
-                <hr>
-                <p class="filter-p">Marca:</p>
-                
-                    <input type="checkbox" class="checkbox" name="peugeot">Peugeot
-                
-            </div>
-            <div class="filter-section-c">
-                <hr>
-                <p class="filter-p">Cambio:</p>
-                
-                    <input type="checkbox" class="checkbox" name="peugeot">Automatico
-                
-            </div> -->
             
             </form>
             </div>
