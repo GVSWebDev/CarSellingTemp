@@ -7,7 +7,7 @@ $result = $con->query($sql);
 if($result->num_rows > 0){
 echo "<div id='searchbox-results'>";
 while($row = $result->fetch_assoc()){
-    echo "<div class='searchbox-resitem' onclick='window.location=\"estoque.php?id=".$row["carroid"]."&c=".$row["nome"]."\";'>
+    echo "<div class='searchbox-resitem' onclick='window.location=\"estoque.php?id=".$row["carroid"]."&c=".preg_replace('/\s+/', '-', $row["nome"])."\";'>
     <p>".$row['nomefull']."</p>
 </div>";
 }
