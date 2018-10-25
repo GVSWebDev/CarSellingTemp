@@ -91,6 +91,16 @@ echo '<body>
                     $conditioncounter++;
                 }
 
+                if(isset($_GET["s"])){
+                    
+                    if($conditioncounter > 0){
+                        $condition .= ' AND nomefull LIKE "%'.$_GET["s"].'%"';
+                    } else {
+                        $condition .= 'nomefull LIKE "%'.$_GET["s"].'%"';
+                    }
+                    $conditioncounter++;
+                }
+
                 if ($conditioncounter == 0){
                     $condition = '';
                 }
