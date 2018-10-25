@@ -1,4 +1,5 @@
 function getStr($str){
+    $str = $str.replace(/[^a-z0-9\s]/gi, '');
     if ($str.length >= 3){
         console.log("Buscando por: "+$str);
         $.ajax({url: "livesearch.php?q="+$str,
