@@ -921,9 +921,19 @@ input:active{
 #destaque-block{
     width: 80%;
     display: flex;
+    flex-direction: column;
     margin: 15px auto;
     background-color: gray;
     height: 625px;
+    text-align: center;
+}
+
+#destaque-container{
+    width: 98%;
+    display: flex;
+    background-color: darkgray;
+    height: 400px;
+    margin: auto;
 }
 
 @keyframes blink-red{
