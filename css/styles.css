@@ -910,6 +910,22 @@ input:active{
    
 }
 
+#banner-block{
+    width: 80%;
+    display: flex;
+    margin: 15px auto;
+    background-color: gray;
+    height: 325px;
+}
+
+#destaque-block{
+    width: 80%;
+    display: flex;
+    margin: 15px auto;
+    background-color: gray;
+    height: 625px;
+}
+
 @keyframes blink-red{
     0% {border-color: gray;}
     50% {border-color: red;}
