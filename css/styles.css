@@ -936,9 +936,10 @@ input:active{
     display: flex;
     flex-direction: column;
     margin: 15px auto;
-    
+    background-color: #f8f8f8;
     height: 440px;
     text-align: center;
+    border: 1px solid rgb(219, 219, 219);
 }
 
 #destaque-container{
@@ -998,6 +999,21 @@ input:active{
 #banner-container #main-display-c #image-c .blockifier .main-image{
     width: initial;
     max-width: 100%;
+}
+
+#destaque-text{
+    display: flex;
+    width: 100%;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+}
+
+#destaque-text h2{
+    margin: auto;
+    color: white;
 }
 
 @keyframes blink-red{
