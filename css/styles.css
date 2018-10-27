@@ -937,7 +937,7 @@ input:active{
     flex-direction: column;
     margin: 15px auto;
     
-    height: 400px;
+    height: 440px;
     text-align: center;
 }
 
@@ -945,9 +945,10 @@ input:active{
     width: 98%;
     display: flex;
     
-    height: 350px;
+    height: 400px;
     margin: auto;
     overflow-x: scroll;
+    overflow-y: hidden
 }
 
 #destaque-item-container{
@@ -957,10 +958,18 @@ input:active{
 
 #destaque-item-container .rec-item{
     justify-content: space-between;
+    flex-basis: initial;
+    width: 280px;
+    height: 98%;
 }
 
 #destaque-item-container .rec-shadow{
     align-self: baseline;
+}
+
+#destaque-item-container .rec-text-c h4{
+    font-size: 1.5em;
+    margin-bottom: 8px;
 }
 
 .imfading{
