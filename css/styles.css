@@ -982,6 +982,15 @@ input:active{
     visibility: hidden;
 }
 
+#destaque-block h2{
+    margin-top: 0px;
+}
+
+#banner-container #main-display-c #image-c .blockifier .main-image{
+    width: initial;
+    max-width: 100%;
+}
+
 @keyframes blink-red{
     0% {border-color: gray;}
     50% {border-color: red;}
