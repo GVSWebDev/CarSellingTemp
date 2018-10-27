@@ -914,19 +914,21 @@ input:active{
     width: 80%;
     display: flex;
     margin: 15px auto;
-    background-color: gray;
-    
+    height: 330px;
+    overflow: hidden;
 }
 
 #banner-container{
     width: 100%;
     height: 100%;
+    
 }
 
 #banner-container #main-display-c{
     width: 100%;
     height: 100%;
     margin: 0px;
+    
 }
 
 #destaque-block{
