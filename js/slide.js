@@ -4,6 +4,7 @@ $nextIndex = 2;
 $imagesAmount = 0;
 
 var intervalID1;
+var intervalID2;
 var canChange = true;
 
 window.onload = function(){
@@ -33,6 +34,11 @@ window.onload = function(){
 
 window.onresize = function(){
     updateTransform();
+}
+
+function setTimer(){
+    console.log("timer set");
+    intervalID2 = setInterval(nextRight, 10000);
 }
 
 function nextRight(){

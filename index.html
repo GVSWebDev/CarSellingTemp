@@ -8,8 +8,10 @@
     <script src="js/java.js"></script>
     <script src="js/fixing.js"></script>
     <script src="js/form-validation.js"></script>
+    <script src="js/slide.js"></script>
     <script src="resources/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
 </head>
 <div id="navbar">
     <div id="logo-c">
@@ -31,12 +33,11 @@
     </div>
 </div>
 <body>
+    <script>setTimer()</script>
     <div id="banner-block">
         <div id="banner-container">
-                <!-- <div id="main-display-c">
-                        <div class="display-arrow" onclick="nextLeft()">
-                            <img src="resources/arrow.png" class="arrow-img">
-                        </div>
+                <div id="main-display-c">
+                        
                         <div id="image-c">
                             <div class="blockifier left-block">
                                 <img src="" id="prevImg" class="notrans left-ready main-image">
@@ -48,23 +49,247 @@
                             <img src="" id="nextImg" class="notrans right-ready main-image">
                         </div>
                         </div>
-                        <div class="display-arrow dsparrow-r" onclick="nextRight()">
-                            <img src="resources/arrow.png" class="arrow-img right-r">
-                        </div>
+                        
                 </div>
                 <div id="image-preloader">
-                    <img src="resources/fusion5.jpg" class="thumbnail">
-                    <img src="resources/fusion5.jpg" class="thumbnail">
-                    <img src="resources/fusion5.jpg" class="thumbnail">
-                </div> -->
+                    <img src="resources/cover.jpg" class="thumbnail">
+                    <img src="resources/cover.jpg" class="thumbnail">
+                    <img src="resources/cover.jpg" class="thumbnail">
+                
         </div>
     </div>
+    </div>
     <div id="destaque-block">
-        <h2>CARROS TOPZERA DOS GOIAS</h2>
+        <h2>Carros em Destaque</h2>
         <div id="destaque-container">
+            <div class="imfading"></div>
             <div id="destaque-item-container">
-                
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
+                <div class="rec-item">
+                    <div class="rec-img-c">
+                        <img src="resources/focus.jpg" class="rec-img">
+                    </div>
+                    <div class="rec-text-c">
+                        <div class="rec-text-title">
+                            <h4>Peugeot 206 12V</h4>
+                        </div>
+                        <div class="rec-specs-c">
+                            <div class="rec-specs-item">
+                                <p>Ano</p>
+                                <div class="separator"></div>
+                                <p>2016</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Kilometragem</p>
+                                <div class="separator"></div>
+                                <p>30000km</p>
+                            </div>
+                            <div class="rec-specs-item">
+                                <p>Gasolina</p>
+                                <div class="separator"></div>
+                                <p>Flex</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rec-shadow"></div>
+                </div>
             </div>
+            <div class="imfading imfrotated"></div>
         </div>
     </div>
 </body>

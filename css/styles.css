@@ -915,7 +915,18 @@ input:active{
     display: flex;
     margin: 15px auto;
     background-color: gray;
-    height: 325px;
+    
+}
+
+#banner-container{
+    width: 100%;
+    height: 100%;
+}
+
+#banner-container #main-display-c{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
 }
 
 #destaque-block{
@@ -923,17 +934,50 @@ input:active{
     display: flex;
     flex-direction: column;
     margin: 15px auto;
-    background-color: gray;
-    height: 625px;
+    
+    height: 400px;
     text-align: center;
 }
 
 #destaque-container{
     width: 98%;
     display: flex;
-    background-color: darkgray;
-    height: 400px;
+    
+    height: 350px;
     margin: auto;
+    overflow-x: scroll;
+}
+
+#destaque-item-container{
+    display: flex;
+    flex-direction: row;   
+}
+
+#destaque-item-container .rec-item{
+    justify-content: space-between;
+}
+
+#destaque-item-container .rec-shadow{
+    align-self: baseline;
+}
+
+.imfading{
+    display: block;
+    width: 20px;
+    position: absolute;
+    height: 333px;
+    background: linear-gradient(to right, #f1f1f1, transparent);
+    opacity: 0.5;
+}
+
+.imfrotated{
+    background: linear-gradient(to left, #f1f1f1, transparent);
+    right: 10.8%;
+}
+
+#image-preloader{
+    display: none;
+    visibility: hidden;
 }
 
 @keyframes blink-red{
