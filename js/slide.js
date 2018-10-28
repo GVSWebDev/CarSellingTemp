@@ -3,6 +3,7 @@ $currIndex = 1;
 $nextIndex = 2;
 $imagesAmount = 0;
 
+
 var intervalID1;
 var intervalID2;
 var canChange = true;
