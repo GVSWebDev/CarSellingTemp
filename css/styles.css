@@ -1016,6 +1016,24 @@ input:active{
     color: white;
 }
 
+#destaque-container .rec-img-c{
+    position: relative;
+}
+
+.rec-price{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    justify-content: center;
+    display: flex;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+    color: white;
+}
+
+.rec-price h3{
+    margin: auto;
+}
+
 @keyframes blink-red{
     0% {border-color: gray;}
     50% {border-color: red;}
