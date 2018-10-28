@@ -947,8 +947,8 @@ input:active{
     display: flex;
     
     height: 400px;
-    margin: auto;
-    overflow-x: scroll;
+    margin: auto auto 14px auto;
+    overflow-x: hidden;
     overflow-y: hidden
 }
 
@@ -1046,6 +1046,7 @@ input:active{
     height: auto;
     max-width: 100%;
     margin: auto 5px;
+    cursor: pointer;
 }
 
 .dsarotated{
