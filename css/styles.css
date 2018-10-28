@@ -1003,6 +1003,7 @@ input:active{
 
 #destaque-text{
     display: flex;
+    flex-direction: row;
     width: 100%;
     background: linear-gradient(to right, #ee5555, #ee6e55);
     height: 50px;
@@ -1032,6 +1033,23 @@ input:active{
 
 .rec-price h3{
     margin: auto;
+}
+
+.dest-slider-arrow-c{
+    display: flex;
+    justify-content: center;
+}
+
+.dest-slider-arrow{
+    display: block;
+    width: 22px;
+    height: auto;
+    max-width: 100%;
+    margin: auto 5px;
+}
+
+.dsarotated{
+    transform: rotate(180deg);
 }
 
 @keyframes blink-red{
