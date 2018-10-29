@@ -1103,6 +1103,15 @@ input:active{
     background-image: url("../resources/loja.jpg");
 }
 
+#estoque-button-big-c:before{
+    background-image: url("../resources/focus.jpg");
+}
+
+#finance-button-big-c:before{
+    background-image: url("../resources/finance.png");
+}
+
+
 
 @keyframes blink-red{
     0% {border-color: gray;}
