@@ -1053,6 +1053,27 @@ input:active{
     transform: rotate(180deg);
 }
 
+#about-h-block{
+    width: 80%;
+    height: 300px;
+    margin: 15px auto;
+}
+
+#about-h-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.big-h-button{
+    height: 100%;
+    flex-basis: 33%;
+    background-color: darkgray;
+    margin: auto 10px;
+}
+
 @keyframes blink-red{
     0% {border-color: gray;}
     50% {border-color: red;}
