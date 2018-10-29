@@ -1072,7 +1072,37 @@ input:active{
     flex-basis: 33%;
     background-color: darkgray;
     margin: auto 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    overflow: auto;
+    position: relative;
 }
+
+.big-h-button:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    background-size: cover;
+    filter: blur(2px);
+    width: 100%;
+    height: 100%;
+}
+
+.big-h-button h2{
+    margin: auto;
+    color: white;
+    font-size: 2em;
+    z-index: 2;
+}
+
+#about-button-big-c:before{
+    background-image: url("../resources/loja.jpg");
+}
+
 
 @keyframes blink-red{
     0% {border-color: gray;}
