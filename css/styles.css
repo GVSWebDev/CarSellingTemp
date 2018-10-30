@@ -1127,12 +1127,12 @@ input:active{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: auto;
+    margin: 15px auto;
+    border: 1px solid rgb(219, 219, 219);
 }
 
 .contact-section{
     flex-basis: 50%;
-    margin: 0px 10px;
 }
 
 .mapouter{
@@ -1146,6 +1146,11 @@ input:active{
     background: none !important;
     height: 100%;
     width: 100%;
+}
+
+#contact-container{
+    background-color: white;
+    
 }
 
 @keyframes blink-red{
