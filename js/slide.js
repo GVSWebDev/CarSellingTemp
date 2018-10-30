@@ -8,7 +8,7 @@ var intervalID1;
 var intervalID2;
 var canChange = true;
 
-window.onload = function(){
+function gatherSlideImages(){
     $imagesAmount = $(".thumbnail").length;
     console.log($imagesAmount);
     $prevIndex = $imagesAmount;
@@ -31,12 +31,6 @@ window.onload = function(){
     $(".left-ready").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
     $(".leave-right").css("transform", "translate("+$("#image-c").innerWidth()+"px, 0px)");
     $(".leave-left").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
-    $("#map-canvas").attr("width", $(".contact-section").outerWidth());
-    $("#map-canvas").attr("height", $(".contact-section").outerHeight());
-}
-
-window.onresize = function(){
-    updateTransform();
 }
 
 function setTimer(){
