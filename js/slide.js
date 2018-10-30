@@ -31,6 +31,8 @@ window.onload = function(){
     $(".left-ready").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
     $(".leave-right").css("transform", "translate("+$("#image-c").innerWidth()+"px, 0px)");
     $(".leave-left").css("transform", "translate(-"+$("#image-c").innerWidth()+"px, 0px)");
+    $("#map-canvas").attr("width", $(".contact-section").outerWidth());
+    $("#map-canvas").attr("height", $(".contact-section").outerHeight());
 }
 
 window.onresize = function(){
