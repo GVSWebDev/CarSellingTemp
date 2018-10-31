@@ -945,11 +945,15 @@ input:active{
 #destaque-container{
     width: 98%;
     display: flex;
-    
     height: 400px;
     margin: auto auto 14px auto;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: hidden
+}
+
+#destaque-container::-webkit-scrollbar {
+    height: 0px;
+    background: transparent; 
 }
 
 #destaque-item-container{
