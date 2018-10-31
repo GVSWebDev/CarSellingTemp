@@ -1121,6 +1121,11 @@ input:active{
     background-image: url("../resources/finance.png");
 }
 
+#contact-container{
+    display: flex;
+    flex-direction: column;
+}
+
 #contact-block{
     width: 80%;
     height: 500px;
@@ -1160,8 +1165,8 @@ input:active{
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 85%;
-    height: 85%;
+    width: 87%;
+    height: 87%;
 }
 
 #contact-home-form p{
@@ -1173,13 +1178,33 @@ input:active{
 }
 
 #contact-home-message{
-    flex-basis: 60%
+    flex-basis: 60%;
+    resize: none;
 }
 
 #contact-home-submit{
     width: 50%;
-    height: 40px;
-    margin: 5px auto;
+    height: 80px;
+    margin: 15px auto auto auto;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#contact-text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to right, #ee5555, #ee6e55);
+    color: white;
+    flex-basis: 10%;
+}
+
+#contact-text h2{
+    margin: auto;
 }
 
 @keyframes blink-red{
