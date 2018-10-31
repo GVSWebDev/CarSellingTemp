@@ -16,7 +16,7 @@ p{
 
 #navbar{
     width: 100%;
-    height: 80px;
+    height: 65px;
     display: flex;
     flex-direction: row;
     background: linear-gradient(to right, #ee5555, #ee6e55);
@@ -31,7 +31,9 @@ p{
 
 #logo{
     display: block;
-    width: 150px;
+    width: 125px;
+    height: auto;
+    margin: auto;
 }
 
 #navbtn-container{
