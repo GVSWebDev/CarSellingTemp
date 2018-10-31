@@ -1207,6 +1207,24 @@ input:active{
     margin: auto;
 }
 
+#contact-nome-c{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 30.5%;
+    justify-content: space-between;
+}
+
+.contact-nome{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 48%;
+    width: 80%;
+}
+
+.contact-nome input{
+    flex-basis: 100%;
+}
+
 @keyframes blink-red{
     0% {border-color: gray;}
     50% {border-color: red;}
