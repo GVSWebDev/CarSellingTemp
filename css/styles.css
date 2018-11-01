@@ -1253,15 +1253,20 @@ input:active{
 .contact-strip-item{
     display: flex;
     flex-direction: row;
-    border-left: 3px solid rgba(0, 0, 0, 0.247);
+    border-left: 3px solid rgba(0, 0, 0, 0.11);
     justify-content: center;
     padding: 10px;
-    flex-basis: 20%;
+    flex-basis: 25%;
     color: white;
+    justify-content: center;
 }
 
 .contact-strip-item p{
-    margin: auto auto auto 5px;
+    margin: auto 10px auto 10px;
+}
+
+.contact-strip-item:nth-last-child(1){
+    border-right: 3px solid rgba(0, 0, 0, 0.11);
 }
 
 @keyframes blink-red{
