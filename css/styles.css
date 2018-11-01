@@ -1233,6 +1233,37 @@ input:active{
     flex-basis: 100%;
 }
 
+#contact-strip{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(to right, #59cf49, #3db461);
+}
+
+#contact-strip-c{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+
+.contact-strip-item{
+    display: flex;
+    flex-direction: row;
+    border-left: 3px solid rgba(0, 0, 0, 0.247);
+    justify-content: center;
+    padding: 10px;
+    flex-basis: 20%;
+    color: white;
+}
+
+.contact-strip-item p{
+    margin: auto auto auto 5px;
+}
+
 @keyframes blink-red{
     0% {border-color: gray;}
     50% {border-color: red;}
