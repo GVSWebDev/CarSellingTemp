@@ -1193,7 +1193,7 @@ input:active{
 #contact-home-submit{
     width: 50%;
     height: 80px;
-    margin: 15px auto auto auto;
+    margin: 15px auto 15px auto;
     background: linear-gradient(to right, #ee5555, #ee6e55);
     color: white;
     border: none;
