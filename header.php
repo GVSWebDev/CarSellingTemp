@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
-    <script src="js/java.js"></script>
     <script src="js/fixing.js"></script>
-    <script src="js/livesearch.js"></script>
+    <script src="js/form-validation.js"></script>
+    <script src="js/destaque-slide.js"></script>
+    <script src="js/map-sizer.js"></script>
+    <script src="js/slide.js"></script>
+    <script src="js/javacalls.js"></script>
+    <script src="resources/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
 </head>
 <div id="navbar">
     <div id="logo-c">
@@ -25,20 +30,6 @@
         <div id="searchbox-icon-c">
             <i class="fa fa-search" aria-hidden="true"></i>
         </div>
-        <!-- <div id="searchbox-results">
-            <div class="searchbox-resitem">
-                <p>Carro Legal</p>
-            </div>
-            <div class="searchbox-resitem">
-                <p>Carro Top</p>
-            </div>
-            <div class="searchbox-resitem">
-                <p>Carro Piska</p>
-            </div>
-            <div class="searchbox-resitem">
-                <p>Carro Manero</p>
-            </div>
-        </div> -->
     </div>
     <div id="navbtn-container">
         <div class="navbtn" onclick="location.reload();location.href='index.php'">

@@ -1236,7 +1236,7 @@ input:active{
 #contact-strip{
     display: flex;
     flex-direction: row;
-    height: 40px;
+    height: 30px;
     width: 100%;
     justify-content: center;
     background: linear-gradient(to right, #59cf49, #3db461);
@@ -1255,7 +1255,7 @@ input:active{
     flex-direction: row;
     border-left: 3px solid rgba(0, 0, 0, 0.11);
     justify-content: center;
-    padding: 10px;
+    
     flex-basis: 25%;
     color: white;
     justify-content: center;
