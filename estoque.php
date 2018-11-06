@@ -195,7 +195,7 @@ echo '<body>
                     $opccounter = 0;
 
                     $nomet = trim($row["nome"]);
-                    $link = "'estoque.php?id=".$row["carroid"]."&c=".preg_replace('/\s+/', '-', $nomet)."'";
+                    $link = "estoque.php?id=".$row["carroid"]."&c=".preg_replace('/\s+/', '-', $nomet);
                     
                     echo '<div class="stock-item-c">
                     <div class="side-shadow">
@@ -238,9 +238,9 @@ echo '<body>
                 <div class="price-c">
                     <h1 class="price">R$'.$row["preco"].'</h1>
                     <p class="finance-p">Simule um financiamento</p>
-                    <div onclick="window.location='.$link.';" class="saiba-mais-c">
+                    <a href="'.$link.'" class="saiba-mais-c">
                         <h2>Saiba mais</h2>
-                    </div>
+                    </a>
                 </div>
             </div>';
 

@@ -54,7 +54,7 @@
                         $sqlimg = "SELECT * FROM gvswebde_pdb.carros_img WHERE carroid = ".$row["carroid"]." AND isprincipal = 1";
                         $resultimg = $con->query($sqlimg);
                         $rowimg = $resultimg->fetch_assoc();
-                        echo '<div class="rec-item">
+                        echo '<a href="" class="rec-item">
                                 <div class="rec-img-c">
                                     <div class="rec-price">
                                         <h3>R$'.$row["preco"].'</h3>
@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="rec-shadow"></div>
-                    </div>';
+                    </a>';
                     }
                 ?>
                 </div>
@@ -127,15 +127,15 @@
     </div>
     <div id="about-h-block">
         <div id="about-h-container">
-            <div id="about-button-big-c" class="big-h-button">
+            <a href="" id="about-button-big-c" class="big-h-button">
                 <h2>Sobre nós</h2>
-            </div>
-            <div id="estoque-button-big-c" class="big-h-button">
+                </a>
+            <a href="estoque.php" id="estoque-button-big-c" class="big-h-button">
                 <h2>Estoque</h2>
-            </div>
-            <div id="finance-button-big-c" class="big-h-button">
+                </a>
+            <a href="" id="finance-button-big-c" class="big-h-button">
                 <h2>Financiamentos</h2>
-            </div>
+                </a>
         </div>
     </div>
     <div id="contact-block">

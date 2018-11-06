@@ -33,12 +33,16 @@
         </div>
     </div>
     <div id="navbtn-container">
-        <div class="navbtn" onclick="location.reload();location.href='index.php'">
-            <p>Home</p>
-        </div>
+        <a href="index.php">
+            <div class="navbtn">
+                <p>Home</p>
+            </div>
+        </a>
+        <a href="estoque.php">
         <div class="navbtn" onclick="location.reload();location.href='estoque.php'">
             <p>Estoque</p>
         </div>
+        </a>
         <div class="navbtn">
             <p>Contato</p>
         </div>
