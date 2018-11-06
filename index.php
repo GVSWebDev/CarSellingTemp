@@ -2,6 +2,7 @@
     require "contactstrip.html";
     require "header.php";
     require "footer.html";
+    require "dbconnect.php";
 ?>
 
 <body>
@@ -44,11 +45,56 @@
         <div id="destaque-container">
             <div class="imfading"></div>
             <div id="destaque-item-container">
-                <div class="rec-item">
-                    <div class="rec-img-c">
-                        <div class="rec-price">
+                <?php
+                    $sql = "SELECT * FROM gvswebde_pdb.carros WHERE destaque = 1";
+                    $result = $con->query($sql);
+
+                    if($result->num_rows === 0) exit ("Não há carros em destaque!");
+                    while($row = $result->fetch_assoc()){
+                        $sqlimg = "SELECT * FROM gvswebde_pdb.carros_img WHERE carroid = ".$row["carroid"]." AND isprincipal = 1";
+                        $resultimg = $con->query($sqlimg);
+                        $rowimg = $resultimg->fetch_assoc();
+                        echo '<div class="rec-item">
+                                <div class="rec-img-c">
+                                    <div class="rec-price">
+                                        <h3>R$'.$row["preco"].'</h3>
+                                    </div>
+                                <img src="'.$rowimg["imglink"].'" class="rec-img">
+                                </div>
+                        <div class="rec-text-c">
+                            <div class="rec-text-title">
+                                <h4>'.$row["nomefull"].'</h4>
+                            </div>
+                            <div class="rec-specs-c">
+                                <div class="rec-specs-item">
+                                    <p>Ano</p>
+                                    <div class="separator"></div>
+                                    <p>'.$row["ano"].'</p>
+                                </div>
+                                <div class="rec-specs-item">
+                                    <p>Kilometragem</p>
+                                    <div class="separator"></div>
+                                    <p>'.$row["kilometragem"].'km</p>
+                                </div>
+                                <div class="rec-specs-item">
+                                    <p>Gasolina</p>
+                                    <div class="separator"></div>
+                                    <p>'.$row["combustivel"].'</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rec-shadow"></div>
+                    </div>';
+                    }
+                ?>
+                </div>
+                <div class="imfading imfrotated"></div>
+                <!-- <div class="rec-item">
+                    <div class="rec-price">
                             <h3>R$30.000,00</h3>
                         </div>
+                    <div class="rec-img-c">
+                        
                         <img src="resources/focus.jpg" class="rec-img">
                     </div>
                     <div class="rec-text-c">
@@ -76,7 +122,7 @@
                     <div class="rec-shadow"></div>
                 </div>
                 </div>
-            <div class="imfading imfrotated"></div>
+            <div class="imfading imfrotated"></div> -->
         </div>
     </div>
     <div id="about-h-block">
