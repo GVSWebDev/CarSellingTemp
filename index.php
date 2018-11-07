@@ -54,7 +54,7 @@
                         $sqlimg = "SELECT * FROM gvswebde_pdb.carros_img WHERE carroid = ".$row["carroid"]." AND isprincipal = 1";
                         $resultimg = $con->query($sqlimg);
                         $rowimg = $resultimg->fetch_assoc();
-                        echo '<a href="" class="rec-item">
+                        echo '<a href="estoque.php?id='.$row["carroid"].'&c='.preg_replace('/\s+/', '-', $row["nomefull"]).'" class="rec-item">
                                 <div class="rec-img-c">
                                     <div class="rec-price">
                                         <h3>R$'.$row["preco"].'</h3>
