@@ -1,4 +1,5 @@
 <?php
+    require "loader.html";
     require "contactstrip.html";
     require "header.php";
     require "footer.html";
