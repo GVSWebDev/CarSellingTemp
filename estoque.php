@@ -1,6 +1,7 @@
 <?php 
 setlocale(LC_CTYPE, 'pt_BR');
-require "header.php";
+require "header.html";
+require "navbar.php";
 require "dbconnect.php";
 
 function removeAcentos($string){
