@@ -92,7 +92,7 @@ function updateClasses(direction){
     $("#"+$decider+"Img").addClass("showing");
     $("#main-display").addClass("leave-"+direction).removeClass("showing");
     updateTransform();
-    intervalID1 = setInterval(waitForAnim, 700);
+    intervalID1 = setInterval(waitForAnim, 1000);
 }
 
 function updateTransform(){
