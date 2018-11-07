@@ -1,7 +1,8 @@
 <?php
+    require "header.html";
     require "loader.html";
+    require "navbar.php";
     require "contactstrip.html";
-    require "header.php";
     require "footer.html";
     require "dbconnect.php";
 ?>
