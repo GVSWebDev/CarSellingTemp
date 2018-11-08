@@ -38,7 +38,7 @@ $(document).on('focusout', '.searchbox-resitem', function(){
 $(function() {
     $("body").click(function(e) {
     if(liveIsActive == true){
-      if (!e.target.id == "searchbox-results" || !$(e.target).parents("#searchbox-results").length) {
+      if (e.target.id != "searchbox-input") {
         $("#searchbox-results").remove();
         liveIsActive = false;
       }

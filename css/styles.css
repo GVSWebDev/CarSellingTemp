@@ -1316,7 +1316,7 @@ animation: load-anim 2s linear infinite;
 }
 
 .search-selected{
-    background-color: gray;
+    background-color: rgb(238, 238, 238);
 }
 
 @keyframes blink-red{
