@@ -12,6 +12,23 @@ body{
 
 p{
     margin: 10px;
+    color: rgb(70, 70, 70);
+}
+
+h4{
+    color: rgb(60, 60, 60);
+}
+
+h3{
+    color: rgb(60, 60, 60);
+}
+
+h2{
+    color: rgb(50, 50, 50);
+}
+
+h1{
+    color: rgb(40, 40, 40);
 }
 
 a{
@@ -295,7 +312,6 @@ li::before{
 }
 
 .tab{
-    color: white;
     background: linear-gradient(to right, #ee5555, #ee6e55);
     border-right: 1px solid #202c3c;
     border-top: 1px solid #202c3c;
@@ -303,6 +319,10 @@ li::before{
     cursor: pointer;
     opacity: 0.9;
     transition: 0.1s ease;
+}
+
+.tab p{
+    color: white;
 }
 
 .tab-show{
@@ -353,7 +373,6 @@ li::before{
 
 #price-h2{
     margin: 1px 15px;
-    color: rgb(80, 80, 80);
 }
 
 #price{
@@ -362,6 +381,7 @@ li::before{
 
 #price-h2 h2{
     margin: 0px 0px;
+    color: rgb(80, 80, 80);
 }
 
 #price h1{
@@ -425,9 +445,9 @@ li::before{
     width: 100%;
     height: 60px;
     background: linear-gradient(to right, #ee5555, #ee6e55);
-    color: white;
     cursor: pointer;
     text-align: center;
+    color: white;
 }
 
 .tel-btn h4{
@@ -442,6 +462,10 @@ li::before{
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.tel-btn-content h4{
+    color: white;
 }
 
 .zip-zop{
@@ -1062,6 +1086,7 @@ input:active{
 
 .rec-price h3{
     margin: auto;
+    color: white;
 }
 
 .dest-slider-arrow-c{
@@ -1229,12 +1254,12 @@ input:active{
     justify-content: center;
     text-align: center;
     background: linear-gradient(to right, #ee5555, #ee6e55);
-    color: white;
     flex-basis: 10%;
 }
 
 #contact-text h2{
     margin: auto;
+    color: white !important;
 }
 
 #contact-nome-c{
@@ -1285,6 +1310,7 @@ input:active{
 
 .contact-strip-item p{
     margin: auto 10px auto 10px;
+    color: white;
 }
 
 .contact-strip-item:nth-last-child(1){
@@ -1321,7 +1347,7 @@ animation: load-anim 2s linear infinite;
 
 #c-maincontainer{
     width: 80%;
-    margin: 20px auto 20px auto;
+    margin: 40px auto 20px auto;
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(219, 219, 219);
