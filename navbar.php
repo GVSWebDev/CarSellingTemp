@@ -21,13 +21,15 @@
             </div>
         </a>
         <a href="estoque.php">
-        <div class="navbtn" onclick="location.reload();location.href='estoque.php'">
+        <div class="navbtn">
             <p>Estoque</p>
         </div>
         </a>
+        <a href="contato.html">
         <div class="navbtn">
             <p>Contato</p>
         </div>
+        </a>
         <div class="navbtn">
             <p>Em breve</p>
         </div>
