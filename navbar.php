@@ -1,7 +1,7 @@
 <div id="navbar">
-    <div id="logo-c">
+    <a href="index.php" id="logo-c">
         <img src="resources/logo-temp.png" id="logo">
-    </div>
+    </a>
     <div id="searchbox-c">
         <div id="searchbox-wrapper">
             <div id="searchbox-input-c">
