@@ -1425,6 +1425,15 @@ animation: load-anim 2s linear infinite;
     margin: 5px 0px;
 }
 
+#fipe-block{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    min-height: 200px;
+}
+
 
 @keyframes blink-red{
     0% {border-color: gray;}
