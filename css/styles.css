@@ -230,13 +230,13 @@ li::before{
     width: 80%;
     height: 75px;
     background: linear-gradient(to right, #ee5555, #ee6e55);
-    color: white !important;
     cursor: pointer;
 }
 
 .saiba-mais-c h2{
     font-size: 1.7em;
     margin: auto;
+    color: white !important;
 }
 
 #filter-show{
