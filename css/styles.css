@@ -498,8 +498,7 @@ li::before{
 #main-display-c{
     display: flex;
     flex-direction: row;
-    flex-basis: 80%;
-    margin: 5px;
+    margin: 10px;
     position: relative;
 }
 
@@ -520,11 +519,12 @@ li::before{
 }
 
 #preview-c{
-    display:flex;
+    overflow-x: scroll;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 18%;
+    flex-wrap: nowrap;
     justify-content: left;
+    margin: 0px 10px 10px 10px;
 }
 
 .thumbnail{
@@ -617,7 +617,7 @@ li::before{
 
 .tab-selected{
     opacity: 1;
-    box-shadow: 0px 3px red;
+    box-shadow: 0px -5px red;
 }
 
 .notrans{
