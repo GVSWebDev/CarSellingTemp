@@ -270,6 +270,7 @@ li::before{
 .filter p{
     margin-right: 4px;
     margin-left: 4px;
+    color: white;
 }
 
 .fa-times{
