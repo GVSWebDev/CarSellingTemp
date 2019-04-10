@@ -155,14 +155,27 @@ a:active{
     flex-basis: 50%;
     margin-right: 20px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-top-c{
+    flex-basis: 15%;
 }
 
 .info-bottom-c{
     display: flex;
+    flex-basis: 85%;
     flex-direction: row;
-    font-size: 1.5em;
+    font-size: 1.2em;
     justify-content: space-evenly;
     margin: auto 0px;
+    height: 100%;
+}
+
+.carinfo-li{
+    height: auto;
 }
 
 ul{
@@ -172,7 +185,7 @@ ul{
 }
 
 li{
-    margin: 10px 0px;
+    margin: 6px 0px;
     padding-left: 1.3em;
 }
 
