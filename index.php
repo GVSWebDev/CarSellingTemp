@@ -129,7 +129,7 @@
     </div>
     <div id="about-h-block">
         <div id="about-h-container">
-            <a href="" id="about-button-big-c" class="big-h-button">
+            <a href="contato.html" id="about-button-big-c" class="big-h-button">
                 <h2>Sobre nós</h2>
                 </a>
             <a href="estoque.php" id="estoque-button-big-c" class="big-h-button">
