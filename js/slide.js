@@ -56,6 +56,9 @@ function nextRight(){
     }
     updateClasses("left");
     updateIndex($currIndex);
+    if($currIndex >= ($imagesAmount / 2)){
+        $("#preview-c").animate({scrollLeft: 500}, 500);
+    }
 }
 }
 
@@ -80,7 +83,9 @@ function nextLeft(){
     console.log("next index is "+ $nextIndex);
     updateClasses("right");
     updateIndex($currIndex, false);
-    
+    if($currIndex <= ($imagesAmount / 2)){
+        $("#preview-c").animate({scrollLeft: -500}, 500);
+    }
 }
 }
 
@@ -131,6 +136,11 @@ function updateIndex(index, shouldUpImg){
     console.log("next index is "+ $nextIndex);
     if (shouldUpImg == true){
         updateImage();
+    }
+    if($currIndex <= ($imagesAmount / 2)){
+        $("#preview-c").animate({scrollLeft: -500}, 500);
+    } else {
+        $("#preview-c").animate({scrollLeft: 500}, 500);
     }
 }
 
